@@ -170,6 +170,7 @@ if __name__=="__main__":
         minute = input("\tminute: ") or 5
 
     # Schedule task
+    main(username, password)
     scheduler = BlockingScheduler()
     scheduler.add_job(main, 'cron', args=[username, password], hour=hour, minute=minute)
     print('⏰ 已启动定时程序，每天 %02d:%02d 为您打卡' %(int(hour), int(minute)))
